@@ -1,0 +1,6 @@
+<h1>hai</h1>
+<%= form_for(:survey, url: surveys_path, :method => :post) do |f| %>
+<p>Name of the survey</p>
+<%= f.text_area :description, size: "6x1" %><br>
+<%= f.submit "Submit", class: "btn btn-large btn-primary"%>
+<% end %>

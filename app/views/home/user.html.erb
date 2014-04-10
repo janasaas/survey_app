@@ -1,0 +1,9 @@
+<div class="center hero-unit"> 
+<h1>Welcome User</h1>
+<p><%= link_to "create survey!", new_survey_path %></p>
+<h2>Your Previous Surveys:</h2>
+<% @surveys.each do |survey| %><br>
+  <%= link_to survey[:description], questions_show_path(:survey_id => survey[:id] )  %>
+<% end %>
+</div>
+

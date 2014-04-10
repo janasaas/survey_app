@@ -1,0 +1,49 @@
+<div>
+<p> Please add questions below to include in your survey. If all the questions have been added, press <%= link_to "Finish Survey", root_path %></p>
+
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span8 well">
+            <ul class="nav nav-tabs">
+                <li class="active"> <a href="#mcq4" data-target="#mcq4" data-toggle="tab">Multiple Choice</a>
+
+                </li>
+                <li><a href="#ynq" data-target="#ynq" data-toggle="tab">Yes/No</a>
+
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active fade in" id="mcq4"><h2>Multiple Choice Question:</h2>
+                <%= form_for(:mcq4, url: mcq4s_path, :method => :post) do |f| %>
+                <p>Type your question</p>
+                <%= f.text_area :question, size: "60x5" %><br>
+
+                <%= f.label "option a" %>
+                <%= f.text_area :a, size: "12x1" %><br>
+
+                <%= f.label "option b" %>
+                <%= f.text_area :b, size: "12x1" %><br>
+
+                <%= f.label "option c" %>
+                <%= f.text_area :c, size: "12x1" %><br>
+
+                <%= f.label "option d" %>
+                <%= f.text_area :d, size: "12x1" %><br>
+
+                <%= f.submit "Submit", class: "btn btn-large btn-primary"%>                  
+  
+                <% end %>
+                </div>
+              <div class="tab-pane" id="ynq"><h2>Yes/No Question:</h2>
+                    <%= form_for(:ynq, url: ynqs_path, :method => :post) do |f| %>
+                    <p>Type your question</p>
+                    <%= f.text_area :question, size: "60x12" %><br>
+                    <%= f.submit "Submit", class: "btn btn-large btn-primary"%>                                  
+      
+                    <% end %>
+              </div>
+           </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<h5>Survey Name: <%=@survey[:description]%> | Survey id: <%=@survey[:id]%> | Created_at: <%=@survey[:created_at]%></h5>
+<% count = 1 %>
+<% @mcq4s.each do |mcq4| %> 
+  <p><em>Ques<%=count%>:</em><%= mcq4[:question] %></td></p>
+  <p>a)<%= mcq4[:a] %></td></p>
+  <p>b)<%= mcq4[:b] %></td></p>
+  <p>c)<%= mcq4[:c] %></td></p>
+  <p>d)<%= mcq4[:d] %></td>
+  <% count = count+1 %>
+<% end %>
+<% @ynqs.each do |ynq| %>
+  <p><em>Ques<%=count%>:</em><%= ynq[:question] %></td></p>
+  <% count = count+1 %>
+<%end%>
